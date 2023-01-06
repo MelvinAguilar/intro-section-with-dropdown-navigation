@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Epilogue", sans-serif;
+    overflow-x: hidden;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+}
+
+
+@layer components {
+  :is(a, button, input, textarea, select, details, summary):focus-visible {
+    outline: theme('colors.almost-black') solid 0.188rem;
+    outline-offset: 0.188rem;
+  }
+
+  .transition-visible {
+    /* transition: visibility 220ms linear; */
+    transition: visibility 0.3s linear, opacity 0.3s linear;
+  }
+
+  .icon-todo::before {
+    content: url("./assets/images/icon-todo.svg");
+    display: inline-block;
+  }
+
+  .icon-calendar::before {
+    content: url("./assets/images/icon-calendar.svg");
+    display: inline-block;
+  }
+
+  .icon-reminder::before {
+    content: url("./assets/images/icon-reminders.svg");
+    display: inline-block;
+  }
+
+  .icon-planning::before {
+    content: url("./assets/images/icon-planning.svg");
+    display: inline-block;
+  }
+
+  .icon-menu::after {
+    content: url("./assets/images/icon-arrow-down.svg");
+    display: inline-block;
+    transition: transform 220ms linear;
+  }
+
+  .icon-menu[aria-expanded="true"]::after {
+    /* content: url("./assets/images/icon-arrow-up.svg"); */
+    transform: rotate(180deg);
+  }
+
+  .width-fill-available {
+    width: -webkit-fill-available;
+  }
+
+  .filter-dark {
+    filter: invert(1) hue-rotate(180deg);
+  }
+
+  .filter-logo-white {
+    filter: invert(1) brightness(6) hue-rotate(180deg);
+  }
+
+  .transition-filter {
+    transition: filter 220ms linear;
+    -webkit-transition: -webkit-filter 220ms linear;
+  }
+}
+
+@layer utilities {
+  ::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: theme('colors.almost-white');
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: theme('colors.medium-gray');
+    border-radius: 1.25rem;
+    border: 0.1875rem solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: theme('colors.almost-black');
+  }
+
+  /* @media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-thumb {
+      background-color: #39CDED;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #25AFDB;
+    }
+  } */
+
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      -webkit-animation-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      -webkit-animation-iteration-count: 1 !important;
+      animation-iteration-count: 1 !important;
+      -webkit-transition-duration: 0.01ms !important;
+      -o-transition-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
