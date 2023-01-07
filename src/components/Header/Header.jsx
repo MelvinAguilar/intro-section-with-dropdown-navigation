@@ -8,8 +8,7 @@ const Header = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    document.body.classList.toggle("overflow-hidden");
-    document.body.classList.toggle("h-screen");
+    document.body.classList.toggle("lock-scroll");
   };
 
   return (
@@ -28,18 +27,11 @@ const Header = () => {
           alt="snap"
           width={91}
           height={26}
-          className={`${styles.transition} mt-[0.3125rem]`}
+          className={`${styles.transition} dark:filter-logo-white mt-[0.3125rem]`}
         />
       </a>
 
       <Navbar toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
-
-      {/* overlay */}
-      <div
-        className={`bg-maastricht-blue pointer-events-none absolute top-0 left-0 z-10 h-full w-full bg-almost-black opacity-0 transition  duration-300 ease-in-out lg:hidden ${
-          isMenuOpen ? "!opacity-40 " : ""
-        }`}
-      ></div>
     </header>
   );
 };

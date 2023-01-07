@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer className="mx-1 mt-8 md:mt-0">
-      <p className="text-center text-[0.875rem] text-almost-black">
+      <p className="text-center text-[0.875rem] text-almost-black dark:text-white">
         Challenge by{" "}
         <a
           href="https://www.frontendmentor.io?ref=challenge"

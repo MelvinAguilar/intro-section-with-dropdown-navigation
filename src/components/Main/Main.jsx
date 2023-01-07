@@ -26,21 +26,21 @@ const Main = () => {
             aria-hidden="true"
             width={480}
             height={640}
-            className="ml-auto block max-md:mx-auto"
+            className="dark:filter-dark ml-auto block mix-blend-screen max-md:mx-auto"
           />
         </picture>
       </div>
       <div className="my-[0.4375rem] flex flex-1 flex-col justify-center gap-[3.0625rem] text-center text-normal md:my-[1.5625rem] md:mx-[2.1875rem] md:text-left lg:my-[6.4375rem]">
-        <h1 className="text-[1.875rem] font-[700] leading-none tracking-[-0.013em] text-almost-black md:max-w-[10.8ch] md:text-[5rem]">
+        <h1 className="text-[1.875rem] font-[700] leading-none tracking-[-0.013em] text-almost-black transition duration-300 ease-in-out dark:text-white md:max-w-[10.8ch] md:text-[5rem]">
           Make remote work
         </h1>
-        <p className="max-w-[43ch] leading-[1.6] tracking-[0.01em] text-medium-gray md:text-normal max-md:mx-auto">
+        <p className="max-w-[43ch] leading-[1.6] tracking-[0.01em] text-medium-gray transition duration-300 ease-in-out dark:text-almost-white md:text-normal max-md:mx-auto">
           Get your team in sync, no matter your location. Streamline processes,
           create team rituals, and watch productivity soar.
         </p>
         <a
           href="#"
-          className={`${styles.transition} ${pixelPerfectLink} block rounded-2xl border-2 border-almost-black bg-almost-black p-3 text-white hover:bg-transparent hover:text-almost-black max-md:mx-auto`}
+          className={`${styles.transition} ${pixelPerfectLink} block rounded-2xl border-2 border-almost-black bg-almost-black p-3 text-white hover:bg-transparent hover:text-almost-black dark:border-white dark:bg-white dark:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-white max-md:mx-auto`}
         >
           Learn more
         </a>

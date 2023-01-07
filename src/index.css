@@ -6,25 +6,98 @@
   html {
     font-family: "Epilogue", sans-serif;
     overflow-x: hidden;
+    scroll-behavior: smooth;
   }
 
   body {
-    min-height: 100vh;
+    min-height: 110vh;
     overflow-x: hidden;
     position: relative;
+  }
+
+  html.dark body {
+    background-color: rgb(31 41 55);
+  }
+
+  :is(a, button, input, textarea, select, details, summary):focus-visible {
+    outline: #696969 solid 0.188rem;
+    outline-offset: 0.188rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :is(a, button, input, textarea, select, details, summary):focus-visible {
+      /* outline-color: theme('colors.almost-white'); */
+    }
   }
 }
 
 
 @layer components {
-  :is(a, button, input, textarea, select, details, summary):focus-visible {
-    outline: theme('colors.almost-black') solid 0.188rem;
-    outline-offset: 0.188rem;
+  .transition-visible {
+    transition: visibility 0.3s linear, opacity 0.3s linear;
   }
 
-  .transition-visible {
-    /* transition: visibility 220ms linear; */
-    transition: visibility 0.3s linear, opacity 0.3s linear;
+  .transition-visibility {
+    --transition: 200ms ease-in-out;
+    transition: transform var(--transition), visibility var(--transition), opacity var(--transition), background-color var(--transition);
+  }
+
+
+  body header::after {
+    --transition: 200ms ease-in-out;
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+    transition-delay: 220ms;
+    transition: background-color var(--transition);
+    z-index: 2;
+  }
+
+  @media screen and (max-width: 1023px) {
+    body.lock-scroll header::after {
+      transform: translateX(0);
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  body.lock-scroll {
+    overflow: hidden;
+    height: 100vh;
+  }
+
+
+  .dot {
+    position: relative;
+    width: 47px;
+    height: 25px;
+    background-color: #A8AAC1;
+    border-radius: 15px;
+    display: block;
+  }
+
+  .dot::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    bottom: 2px;
+    width: 21px;
+    height: 21px;
+    background: #fff;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+  }
+
+  input[type="checkbox"]:checked+.dot::before {
+    transform: translateX(22px);
+    background: white;
+  }
+
+  input[type="checkbox"]:checked+.dot {
+    background: linear-gradient(45deg, #726CEE, #4BB1DA);
   }
 
   .icon-todo::before {
@@ -50,11 +123,15 @@
   .icon-menu::after {
     content: url("./assets/images/icon-arrow-down.svg");
     display: inline-block;
-    transition: transform 220ms linear;
+    transition: all 220ms linear;
+
+  }
+
+  html.dark .icon-menu::after {
+    filter: invert(1) brightness(6) hue-rotate(180deg);
   }
 
   .icon-menu[aria-expanded="true"]::after {
-    /* content: url("./assets/images/icon-arrow-up.svg"); */
     transform: rotate(180deg);
   }
 
@@ -63,7 +140,7 @@
   }
 
   .filter-dark {
-    filter: invert(1) hue-rotate(180deg);
+    /* filter: invert(0.1); */
   }
 
   .filter-logo-white {
