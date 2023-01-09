@@ -6,7 +6,7 @@
 
   <h2 align="center">Intro section with dropdown navigation solution</h2>
   <p align="center">
-    <a href="https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5"><strong>Frontend Mentor Challenge</strong></a>
+    <a href="https://www.frontendmentor.io/solutions/intro-section-with-dropdown-navigation-tmQXOQU78e"><strong>Frontend Mentor Challenge</strong></a>
     <br />
     <br />
     <a href="https://intro-section-with-dropdown-navigation-hdez.vercel.app/">View Demo</a>
@@ -24,8 +24,8 @@
     <img src="https://img.shields.io/badge/Profile-Melvin%20Aguilar-07043B?style=for-the-badge&logo=frontendmentor" alt="Melvin Profile">
   </a>
   <!-- Status -->
-  <a href="#">
-    <img src="https://img.shields.io/badge/Status-Pending-F94E23?style=for-the-badge" alt="Status">
+    <a href="#">
+    <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge" alt="Status Completed">
   </a>
 
 </div>
@@ -42,8 +42,8 @@ This is a solution to the [Intro section with dropdown navigation challenge on F
 
 <h2 align="center">Links</h2>
 
-<!-- - Solution URL: [URL shortening API landing page (React + SASS) | Frontend Mentor](https://www.frontendmentor.io/solutions/ping-single-column-coming-soon-page-XddXG4uLv2)
-- Live Site URL: [https://url-shortening-api-landing-page-hdez.vercel.app/](https://url-shortening-api-landing-page-hdez.vercel.app/) -->
+- Solution URL: [Intro section with dropdown navigation (React + Tailwind + Dark mode) (React + SASS) | Frontend Mentor](https://www.frontendmentor.io/solutions/intro-section-with-dropdown-navigation-tmQXOQU78e)
+- Live Site URL: [https://intro-section-with-dropdown-navigation-hdez.vercel.app/](https://intro-section-with-dropdown-navigation-hdez.vercel.app/) 
 
 <br>
 
