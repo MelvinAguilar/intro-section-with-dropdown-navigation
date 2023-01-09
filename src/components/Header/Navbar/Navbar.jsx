@@ -45,13 +45,14 @@ const Navbar = ({ toggleMenu, isMenuOpen }) => {
                 : ""
             } transition-visibility invisible flex w-max flex-col gap-4 rounded-md leading-none lg:right-0 lg:-translate-y-[40%] lg:bg-white/95 lg:opacity-0 lg:dark:bg-gray-800/95`}
           >
+            {/* START Features Sub-menu */}
             {[
               ["icon-todo", "Todo List"],
               ["icon-calendar", "Calendar"],
               ["icon-reminder", "Reminders"],
               ["icon-planning", "Planning"],
             ].map(([className, text], index) => (
-              <li key={index}>
+              <li key={`features-${index}`}>
                 <a
                   href="#"
                   className={`${className} ${styles.transition} flex gap-4 hover:text-almost-black dark:hover:text-gray-400`}
@@ -60,6 +61,7 @@ const Navbar = ({ toggleMenu, isMenuOpen }) => {
                 </a>
               </li>
             ))}
+            {/* END Features Sub-menu */}
           </ul>
         </li>
         <li className="relative">
@@ -73,6 +75,7 @@ const Navbar = ({ toggleMenu, isMenuOpen }) => {
           >
             Company
           </button>
+          {/* START company sub-menu */}
           <ul
             id="company-menu"
             className={`${styles.submenumobile} ${styles.submenudesktop} ${
@@ -82,7 +85,7 @@ const Navbar = ({ toggleMenu, isMenuOpen }) => {
             } transition-visibility invisible flex w-max flex-col gap-4 rounded-md leading-none lg:left-0 lg:-translate-y-[40%] lg:bg-white/95 lg:opacity-0 lg:dark:bg-gray-800/95`}
           >
             {[["History"], ["Our Team"], ["Blog"]].map(([text], index) => (
-              <li key={index}>
+              <li key={`company-${index}`}>
                 <a
                   href="#"
                   className={`${styles.transition} block hover:text-almost-black dark:hover:text-gray-400`}
@@ -91,6 +94,7 @@ const Navbar = ({ toggleMenu, isMenuOpen }) => {
                 </a>
               </li>
             ))}
+            {/* END company Sub-menu */}
           </ul>
         </li>
         <li>

@@ -10,7 +10,7 @@
   }
 
   body {
-    min-height: 110vh;
+    min-height: 100vh;
     overflow-x: hidden;
     position: relative;
   }
@@ -24,10 +24,8 @@
     outline-offset: 0.188rem;
   }
 
-  @media (prefers-color-scheme: dark) {
-    :is(a, button, input, textarea, select, details, summary):focus-visible {
-      /* outline-color: theme('colors.almost-white'); */
-    }
+  html.dark :is(a, button, input, textarea, select, details, summary):focus-visible {
+    outline-color: #fff;
   }
 }
 
@@ -41,7 +39,6 @@
     --transition: 200ms ease-in-out;
     transition: transform var(--transition), visibility var(--transition), opacity var(--transition), background-color var(--transition);
   }
-
 
   body header::after {
     --transition: 200ms ease-in-out;
@@ -124,7 +121,6 @@
     content: url("./assets/images/icon-arrow-down.svg");
     display: inline-block;
     transition: all 220ms linear;
-
   }
 
   html.dark .icon-menu::after {
@@ -137,10 +133,6 @@
 
   .width-fill-available {
     width: -webkit-fill-available;
-  }
-
-  .filter-dark {
-    /* filter: invert(0.1); */
   }
 
   .filter-logo-white {
@@ -172,16 +164,6 @@
   ::-webkit-scrollbar-thumb:hover {
     background-color: theme('colors.almost-black');
   }
-
-  /* @media (prefers-color-scheme: dark) {
-    ::-webkit-scrollbar-thumb {
-      background-color: #39CDED;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background-color: #25AFDB;
-    }
-  } */
 
   @media (prefers-reduced-motion: reduce) {
     html:focus-within {

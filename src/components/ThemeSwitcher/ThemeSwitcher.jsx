@@ -7,32 +7,27 @@ const ThemeSwitcher = () => {
   const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
   useEffect(() => {
-    if ((userTheme && userTheme === "dark") || (!userTheme && systemTheme)) {
+    if ((userTheme && userTheme === "dark") || (!userTheme && systemTheme))
       setDarkMode(true);
-    } else {
-      setDarkMode(false);
-    }
+    else setDarkMode(false);
   }, []);
 
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
+    if (darkMode) localStorage.setItem("theme", "dark");
+    else localStorage.setItem("theme", "light");
+
+    document.documentElement.classList.toggle("dark");
   }, [darkMode]);
 
   return (
     <label
-      className={`${styles.transition} text-text-medium-gray flex w-full cursor-pointer items-center justify-between gap-[15px] hover:text-almost-black dark:hover:text-gray-400 md:justify-end`}
+      className={`${styles.transition} text-text-medium-gray relative flex w-full items-center justify-between gap-[15px] hover:text-almost-black dark:hover:text-gray-400 md:justify-end`}
     >
       <input
         type="checkbox"
-        className="absolute h-0 w-0 opacity-0"
+        className="m-t absolute top-0 left-0 z-10 h-full w-full cursor-pointer appearance-none"
         checked={darkMode}
-        aria-label="Dark mode"
+        role="switch"
         aria-checked={darkMode}
         onChange={() => setDarkMode(!darkMode)}
       />
