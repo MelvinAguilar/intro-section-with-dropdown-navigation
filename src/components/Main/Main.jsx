@@ -26,7 +26,7 @@ const Main = () => {
             aria-hidden="true"
             width={480}
             height={640}
-            className="dark:filter-dark ml-auto block mix-blend-screen max-md:mx-auto"
+            className="dark:filter-dark ml-auto block dark:mix-blend-screen max-md:mx-auto"
           />
         </picture>
       </div>
