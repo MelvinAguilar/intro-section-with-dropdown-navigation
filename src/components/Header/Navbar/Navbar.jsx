@@ -19,6 +19,8 @@ const Navbar = ({ toggleMenu, isMenuOpen }) => {
 
   return (
     <nav aria-label="Main" className="w-auto lg:w-full">
+      <HamburgerMenu toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
+
       <ul
         className={`transition-visibility z-40 flex translate-x-[150%] flex-col items-start gap-4 p-10 pt-24 text-[0.875rem] text-medium-gray dark:text-white lg:flex-row lg:items-center lg:gap-10 lg:p-0 max-lg:invisible max-lg:dark:bg-gray-800 ${
           isMenuOpen ? "!visible !translate-x-0 max-lg:overflow-y-auto" : ""
@@ -133,8 +135,6 @@ const Navbar = ({ toggleMenu, isMenuOpen }) => {
           </a>
         </li>
       </ul>
-
-      <HamburgerMenu toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
     </nav>
   );
 };
